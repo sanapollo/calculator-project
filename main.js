@@ -55,11 +55,16 @@ reset.addEventListener('click', () => {
     second = false;
 });
 equals.addEventListener('click', () => {
-    lastCalcResult = operate(first, last, op)
+    if (op == "" || last == "" || first == "") {
+        output.textContent = "Please supply operator";
+    } else {
+    lastCalcResult = operate(first, last, op);
     output.textContent = lastCalcResult;
     op = "";
     last = "";
+    first = "";
     hasCalculated = true;
+    }
 });
 
 //numpad buttons
@@ -144,6 +149,7 @@ const choice = input => {
 const chooseOp = input => {
     if (hasCalculated == true) {
         first = lastCalcResult;
+        hasCalculated = false;
     }
     op = input;
     output.textContent = "0"
