@@ -1,0 +1,31 @@
+.container {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    min-width: auto;
+    /*max-width: 20em;*/
+}
+
+body {
+    background-color: darkgoldenrod;
+    color: aliceblue;
+}
+
+
+.output {
+    border: 0.1em dashed black;
+    padding: 1em 4em;
+}
+
+.input {
+    display: flex;
+}
+.operators {
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.row button {
+    padding: 3em;
+}
