@@ -1,4 +1,5 @@
 const output = document.getElementById("output");
+const msg = document.getElementById("msgbox");
 
 //math
 const add = function (a, b) {
@@ -48,26 +49,29 @@ btnMult.addEventListener('click', () => {
     chooseOp("m");
 });
 reset.addEventListener('click', () => {
-    op = "";
     output.textContent = "0";
-    first = "";
-    last = "";
+    clear();
     second = false;
     hasCalculated = false;
     lastCalcResult = "";
+
 });
 equals.addEventListener('click', () => {
     if (op == "" || last == "" || first == "") {
-        output.textContent = "Please supply operator";
+        msg.textContent = "Please supply operator or start a new calculation";
+    } else if (last == 0 && first == 0) {
+        output.textContent = "quit trying to break my calculator";
+        msg.textContent = "quit trying to break my calculator";
+        clear();
     } else {
-    lastCalcResult = operate(first, last, op);
-    output.textContent = lastCalcResult;
-    op = "";
-    last = "";
-    first = "";
-    hasCalculated = true;
+        lastCalcResult = operate(first, last, op);
+        output.textContent = lastCalcResult;
+        clear();
+        hasCalculated = true;
     }
 });
+
+
 
 //numpad buttons
 const num1 = document.getElementById("1");
@@ -109,12 +113,17 @@ num9.addEventListener('click', () => {
     choice(9);
 });
 num0.addEventListener('click', () => {
-    choice(0);
+    if (first == 0 || last == 0) {
+        msg.textContent = "Invalid, Please enter value greater than 0";
+        output.textContent = "";
+    } else {
+        choice(0);
+    }
 });
 
+/* CORE LOGIC*/
 
-
-
+// calculation logic
 const operate = (a, b, f) => {
     switch (f) {
         case 'a':
@@ -130,13 +139,15 @@ const operate = (a, b, f) => {
             return subtract(+a, +b);
             break;
         default:
-            output.textContent = "No Operator supplied!";
+            output.textContent = "";
+            msg.textContent = "No Operator supplied!";
 
     }
 };
 
+// collects user input
 const choice = input => {
-    //console.log(input);
+    msg.textContent = "";
     if (second == false) {
         first += input;
         output.textContent = first;
@@ -144,11 +155,13 @@ const choice = input => {
         last += input;
         output.textContent = last;
     } else {
-        output.textContent = "Something is broken";
+        msg.textContent = "Something is broken";
     }
 }
 
+// collects operator
 const chooseOp = input => {
+    msg.textContent = "";
     if (hasCalculated == true) {
         first = lastCalcResult;
         hasCalculated = false;
@@ -156,4 +169,12 @@ const chooseOp = input => {
     op = input;
     output.textContent = "0"
     second = true;
+}
+
+
+const clear = () => {
+    op = "";
+    last = "";
+    first = "";
+    msg.textContent = "";
 }

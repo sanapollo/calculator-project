@@ -7,15 +7,21 @@
 }
 
 body {
-    background-color: darkgoldenrod;
-    color: aliceblue;
+    background-color: darkslategray;
+    color: gray;
 }
 
 .output {
-    border: 0.3em solid darkslategray;
+    border: 0.3em solid aliceblue;
     padding: 1em 4em;
 }
+.msgbox {
+    color: red;
+}
 
+.output div {
+    text-align: center;
+}
 .input {
     display: flex;
     gap: 1em;
@@ -28,17 +34,31 @@ body {
     align-items: center;
     flex-direction: column;
     gap: 0.3em;
+    text-align: center;
 }
 
-.row button, .operators {
-    padding: 3em;
+.row button, .operators button {
+    
+    background-color: #455d7a;
+    color: aliceblue;
+}
+.row button {
     max-width: 3em;
+    padding: 3em;
 }
 
+.operators button {
+    padding: 1em;
+}
 .numpad, .operators {
     border: 0.1em dashed black;
 }
 
 .title {
-    border-bottom: 0.2em dashed darkslategray;
+    border-bottom: 0.2em dashed aliceblue;
+    text-align: center;
+}
+
+.title h4 {
+    color: red;
 }
