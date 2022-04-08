@@ -3,15 +3,13 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    min-width: auto;
-    /*max-width: 20em;*/
+    gap: 3em;
 }
 
 body {
     background-color: darkgoldenrod;
     color: aliceblue;
 }
-
 
 .output {
     border: 0.1em dashed black;
@@ -20,12 +18,22 @@ body {
 
 .input {
     display: flex;
+    gap: 1em;
+    
 }
+
 .operators {
+    display:flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 }
-.row button {
+
+.row button, .operators {
     padding: 3em;
+    max-width: 3em;
+}
+
+.numpad, .operators {
+    border: 0.1em dashed black;
 }
