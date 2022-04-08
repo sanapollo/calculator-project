@@ -53,6 +53,8 @@ reset.addEventListener('click', () => {
     first = "";
     last = "";
     second = false;
+    hasCalculated = false;
+    lastCalcResult = "";
 });
 equals.addEventListener('click', () => {
     if (op == "" || last == "" || first == "") {
