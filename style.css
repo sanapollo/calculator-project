@@ -12,7 +12,7 @@ body {
 }
 
 .output {
-    border: 0.1em dashed black;
+    border: 0.3em solid darkslategray;
     padding: 1em 4em;
 }
 
@@ -27,6 +27,7 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    gap: 0.3em;
 }
 
 .row button, .operators {
@@ -36,4 +37,8 @@ body {
 
 .numpad, .operators {
     border: 0.1em dashed black;
+}
+
+.title {
+    border-bottom: 0.2em dashed darkslategray;
 }

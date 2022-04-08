@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="main.js"></script>
+    <script src="main.js" defer></script>
     <title>Calculator</title>
 </head>
 
@@ -15,7 +15,7 @@
         <div class="title">
             <h1>Calculator</h1>
         </div>
-        <div class="output">0</div>
+        <div id="output" class="output">0</div>
         <div class="input">
             <div class="numpad">
                 <div class="row">
@@ -39,11 +39,12 @@
                 </div>
             </div>
             <div class="operators">
-                <button id="mult">Multiply</button>
-                <button id="div">Divide</button>
-                <button id="sub">Subtract</button>
                 <button id="add">Add</button>
-                <button id="reset">Reset</button>
+                <button id="sub">Subtract</button>
+                <button id="mult">Multiply</button>
+                <button id="divi">Divide</button>
+                <br>
+                <button id="reset">Clear</button>
             </div>
         </div>
     </div>
