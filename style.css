@@ -15,6 +15,7 @@ body {
     border: 0.3em solid aliceblue;
     padding: 1em 4em;
 }
+
 .msgbox {
     color: red;
 }
@@ -22,6 +23,7 @@ body {
 .output div {
     text-align: center;
 }
+
 .input {
     display: flex;
     gap: 1em;
@@ -37,19 +39,25 @@ body {
     text-align: center;
 }
 
-.row button, .operators button {
+.row button, .operators button, i {
     
     background-color: #455d7a;
     color: aliceblue;
 }
+
 .row button {
     max-width: 3em;
     padding: 3em;
 }
 
+i {
+    padding: 2.2em;
+}
+
 .operators button {
     padding: 1em;
 }
+
 .numpad, .operators {
     border: 0.1em dashed black;
 }

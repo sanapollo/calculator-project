@@ -84,6 +84,7 @@ const num7 = document.getElementById("7");
 const num8 = document.getElementById("8");
 const num9 = document.getElementById("9");
 const num0 = document.getElementById("0");
+const back = document.getElementById("back");
 
 num1.addEventListener('click', () => {
     choice(1);
@@ -119,6 +120,9 @@ num0.addEventListener('click', () => {
     } else {
         choice(0);
     }
+});
+back.addEventListener('click', () => {
+    del();
 });
 
 /* CORE LOGIC*/
@@ -177,4 +181,18 @@ const clear = () => {
     last = "";
     first = "";
     msg.textContent = "";
+}
+
+const del = () => {
+    if (second == false) {
+       let array = first.split();
+       let removed = array.pop();
+       array.join("");
+       return array;
+    } else {
+        let array = last.split();
+       let removed = array.pop();
+       array.join("");
+       return array;
+    }
 }
